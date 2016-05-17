@@ -4,42 +4,36 @@
 		<h1>Hello!!!</h1>
 		<button ng-click="showAlert()" class="button button-positive">Click Me!</button>
 		-->
-		<form>
+		<form ng-submit="saveIdea()">
 			<div class="list">
 
 				<!-- input name idea -->
 				<label class="item item-input item-floating-label">
 					<span class="input-label">Name</span>
-					<input type="text" placeholder="Name idea">
+					<input type="text" placeholder="Name idea" ng-model="idea.name">
 				</label>
 
 				<label class="item item-input item-floating-label">
 					<span class="input-label">Description</span>
-					<textarea placeholder="Description"></textarea>
+					<textarea placeholder="Description" ng-model="idea.text"></textarea>
 				</label>
 
 				<div class="item-divider">
 					¿Que tipo de idea es?
 				</div>
 				
-				<ion-checkbox>
-					Tecnologica
-				</ion-checkbox>
-				<ion-checkbox>
-					Deportiva
-				</ion-checkbox>
-				<ion-checkbox>
-					Economica
+				<ion-checkbox ng-repeat="type in idea.types" ng-model="type.check">
+					{{ type.name }}
 				</ion-checkbox>
 
 				<div class="item-divider">
 					¿Que efecto tendra tu idea?
 				</div>
 
-				<ion-radio>
+				<ion-radio ng-model="idea.effect" ng-value="'+'">
 					Positiva
 				</ion-radio>
-				<ion-radio>
+				<ion-radio ng-model="idea.effect" ng-value="'-'">
 					Negativa
 				</ion-radio>
 
@@ -47,14 +41,19 @@
 					Informacion general
 				</div>
 
-				<ion-toggle>
+				<ion-toggle ng-model="idea.money">
 					¿Tienes dinero?
 				</ion-toggle>
-				<ion-toggle>
+				<ion-toggle ng-model="idea.idea">
 					¿has tenido una idea antes?
 				</ion-toggle>
 
 			</div>
+
+			<div class="padding">
+				<button type="submit" class="button button-calm button-block">Save</button>
+			</div>
+
 		</form>
 
 	</ion-content>

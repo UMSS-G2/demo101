@@ -212,6 +212,32 @@ angular.module('starter.controllers', [])
   */
 
   $scope.showAlert = showAlert;
+  $scope.saveIdea = saveIdea;
+
+
+  $scope.idea = {
+    effect: "",
+    money: false,
+    idea: false,
+    types: [
+      {
+        name: "Tech",
+        check: false
+      },
+      {
+        name: "Sport",
+        check: false
+      },
+      {
+        name: "Economic",
+        check: false
+      },
+      {
+        name: "Cultural",
+        check: false
+      },
+    ]
+  };
 
   function showAlert(){
     //alert("Hello!");
@@ -223,4 +249,14 @@ angular.module('starter.controllers', [])
       okType: "button-dark"
     });
   }
+
+  function saveIdea(){
+    console.log( "Name", $scope.idea.name );
+    console.log( "Text", $scope.idea.text );
+    console.log( "Effect", $scope.idea.effect );
+    console.log( "Money", $scope.idea.money );
+    console.log( "Idea", $scope.idea.idea );
+    console.log( "Idea", $scope.idea.types.filter( item => item.check ).map(item => item.name) );
+  }
+
 });
