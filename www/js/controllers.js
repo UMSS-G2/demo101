@@ -201,6 +201,24 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('CakeCtrl', function(){
-  console.log("Cake work!!");
+.controller('CakeCtrl', function($scope, $ionicPopup, $ionicLoading){
+
+  $ionicLoading.show();
+
+  setTimeout(function(){
+    $ionicLoading.hide();
+  }, 5000);
+
+  $scope.showAlert = showAlert;
+
+  function showAlert(){
+    //alert("Hello!");
+    $ionicPopup.alert({
+      title: "Hello",
+      subTitle: "kjsdksdf",
+      template: "bla bla bla bla",
+      okText: "Aceptar",
+      okType: "button-dark"
+    });
+  }
 });
