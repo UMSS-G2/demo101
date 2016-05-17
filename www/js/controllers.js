@@ -203,11 +203,13 @@ angular.module('starter.controllers', [])
 
 .controller('CakeCtrl', function($scope, $ionicPopup, $ionicLoading){
 
+  /*
   $ionicLoading.show();
 
   setTimeout(function(){
     $ionicLoading.hide();
   }, 5000);
+  */
 
   $scope.showAlert = showAlert;
 

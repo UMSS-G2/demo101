@@ -1,8 +1,61 @@
-<ion-view title="Cakes">
+<ion-view title="Ideas">
 	<ion-content>
 		<!--
 		<h1>Hello!!!</h1>
 		<button ng-click="showAlert()" class="button button-positive">Click Me!</button>
 		-->
+		<form>
+			<div class="list">
+
+				<!-- input name idea -->
+				<label class="item item-input item-floating-label">
+					<span class="input-label">Name</span>
+					<input type="text" placeholder="Name idea">
+				</label>
+
+				<label class="item item-input item-floating-label">
+					<span class="input-label">Description</span>
+					<textarea placeholder="Description"></textarea>
+				</label>
+
+				<div class="item-divider">
+					¿Que tipo de idea es?
+				</div>
+				
+				<ion-checkbox>
+					Tecnologica
+				</ion-checkbox>
+				<ion-checkbox>
+					Deportiva
+				</ion-checkbox>
+				<ion-checkbox>
+					Economica
+				</ion-checkbox>
+
+				<div class="item-divider">
+					¿Que efecto tendra tu idea?
+				</div>
+
+				<ion-radio>
+					Positiva
+				</ion-radio>
+				<ion-radio>
+					Negativa
+				</ion-radio>
+
+				<div class="item-divider">
+					Informacion general
+				</div>
+
+				<ion-toggle>
+					¿Tienes dinero?
+				</ion-toggle>
+				<ion-toggle>
+					¿has tenido una idea antes?
+				</ion-toggle>
+
+			</div>
+		</form>
+
 	</ion-content>
 </ion-view>
