@@ -1,6 +1,10 @@
 <ion-view title="Class One">
 	<ion-content class="padding">
 
+		<h2> {{ "Nirvana" | short }} </h2>
+		<h2> {{ "Nirvana" | reverse }} </h2>
+		<h2> {{ "anavriN" | reverse }} </h2>
+
 		<button class="button">Button 1</button>
 		<button class="button button-positive button-block">Button 2</button>
 		<button class="button button-dark button-block">Button 3</button>
@@ -48,5 +52,6 @@
 		<h1>
 			{{ "Nicolas" | limitTo: 4 }}
 		</h1>
+
 	</ion-content>
 </ion-view>
