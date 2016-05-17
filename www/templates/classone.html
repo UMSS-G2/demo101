@@ -1,0 +1,52 @@
+<ion-view title="Class One">
+	<ion-content class="padding">
+
+		<button class="button">Button 1</button>
+		<button class="button button-positive button-block">Button 2</button>
+		<button class="button button-dark button-block">Button 3</button>
+		<button class="button button-dark button-block button-small">Button 4</button>
+		<button class="button button-calm button-block button-large">Button 6</button>
+		<button class="button button-dark button-block button-large button-outline">Button 6</button>
+
+		<button class="button button-dark button-large  icon-left ion-image">Take a picture</button>
+		
+
+		<h1>Hola mundo</h1>
+		<h2>{{ name }} {{ lastname }}</h2>
+		<hr/>
+		<input type="text" ng-model="name" />
+		<hr/>
+		<input type="number" ng-model="numberA" />
+		<input type="number" ng-model="numberB" />
+		<hr/>
+		<h3>El resultado es {{ numberA * numberB }}</h3>
+		<hr/>
+		<h1 ng-show="(numberA * numberB) % 2 == 0">Es par!!!</h1>
+		<h1 ng-show="(numberA * numberB) % 2 != 0">Es impar!!!</h1>
+		<hr/>
+		<input placeholder="Busque por nombre" type="text" ng-model="nameGirl">
+		<input placeholder="Busque por middle" type="text" ng-model="middleNameGirl">
+
+		<ion-list>
+			<ion-item class="item-avatar" ng-repeat="girl in girls | filter: {middlename : middleNameGirl, name: nameGirl} | orderBy: '-age' ">
+				<img ng-src="{{ girl.photo }}" alt="">
+				<h2>{{ girl.name | uppercase }} {{ girl.middlename }}</h2>
+				<p>
+					ella tiene {{ girl.age }} años, ella es <strong ng-show="girl.age <= 22">joven</strong>
+					<strong ng-show="girl.age > 22">mayor</strong>
+				</p>
+			</ion-item>
+		</ion-list>
+		<hr/>
+		<button ng-dblclick="showAlert()">Click Me!!</button>
+		<hr/>
+		<h1>{{ today | date: 'yy - MMMM - d  h:mm:ss a' }}</h1>
+		<hr/>
+		<h1>
+			{{ 2.32223434232323 | number: 2 }}
+		</h1>
+		<h1>
+			{{ "Nicolas" | limitTo: 4 }}
+		</h1>
+	</ion-content>
+</ion-view>
