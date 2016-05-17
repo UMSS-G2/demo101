@@ -199,4 +199,8 @@ angular.module('starter.controllers', [])
     },
   ];
 
+})
+
+.controller('CakeCtrl', function(){
+  console.log("Cake work!!");
 });

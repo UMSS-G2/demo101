@@ -81,7 +81,17 @@ angular.module('starter', [
         controller: 'ClassOneCtrl'
       }
     }
+  })
+
+  .state('app.cake', {
+    url: '/cake',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/cake.html',
+        controller: 'CakeCtrl'
+      }
+    }
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/classone');
+  $urlRouterProvider.otherwise('/app/cake');
 });
