@@ -280,6 +280,8 @@ angular.module('starter.controllers', [])
   $scope.closeModal = closeModal;
   $scope.saveRockBand = saveRockBand;
 
+  $scope.nameRockBand = "";
+
   $scope.rockband = {};
 
   $ionicModal.fromTemplateUrl('templates/rockband-modal.html', {
@@ -293,22 +295,26 @@ angular.module('starter.controllers', [])
     {
       name: 'Nirvana',
       photo: 'nirvana.png',
-      voice: 'Cur...'
+      voice: 'Cur...',
+      year: 1980
     },
     {
       name: 'Coldplay',
       photo: 'coldplay.jpg',
-      voice: 'Nicolas'
+      voice: 'Nicolas',
+      year: 2001
     },
     {
       name: 'The beatles',
       photo: 'beatles.jpg',
-      voice: 'Lennon'
+      voice: 'Lennon',
+      year: 1960
     },
     {
       name: 'Queen',
       photo: 'queen.jpg',
-      voice: 'Fred..'
+      voice: 'Fred..',
+      year: 1960
     }
   ];
 

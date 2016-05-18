@@ -5,11 +5,19 @@
 	</ion-nav-buttons>
 
 	<ion-content>
+
+		<div class="list list-inset">
+		  <label class="item item-input">
+		    <i class="icon ion-search placeholder-icon"></i>
+		    <input type="text" placeholder="Search" ng-model="nameRockBand">
+		  </label>
+		</div>
+
 		<ion-list>
-			<ion-item class="item-thumbnail-left" ng-repeat="band in rockbands">
+			<ion-item class="item-thumbnail-left" ng-repeat="band in rockbands | filter: { name : nameRockBand } | orderBy: 'year'">
 				<img ng-src="img/rockbands/{{ band.photo }}" alt="">
 				<h2>{{ band.name }}</h2>
-				<p> {{ band.voice }} </p>
+				<p> {{ band.voice }} {{ band.year }}</p>
 			</ion-item>
 		</ion-list>
 	</ion-content>
