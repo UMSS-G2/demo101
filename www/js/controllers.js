@@ -271,4 +271,60 @@ angular.module('starter.controllers', [])
     });
   }
 
+})
+
+.controller('RockBandsCtrl', function($scope, $ionicModal){
+
+  $scope.modal = null;
+  $scope.showModal = showModal;
+  $scope.closeModal = closeModal;
+  $scope.saveRockBand = saveRockBand;
+
+  $scope.rockband = {};
+
+  $ionicModal.fromTemplateUrl('templates/rockband-modal.html', {
+    scope: $scope
+  })
+  .then(function(modal){
+    $scope.modal = modal;
+  });
+
+  $scope.rockbands = [
+    {
+      name: 'Nirvana',
+      photo: 'nirvana.png',
+      voice: 'Cur...'
+    },
+    {
+      name: 'Coldplay',
+      photo: 'coldplay.jpg',
+      voice: 'Nicolas'
+    },
+    {
+      name: 'The beatles',
+      photo: 'beatles.jpg',
+      voice: 'Lennon'
+    },
+    {
+      name: 'Queen',
+      photo: 'queen.jpg',
+      voice: 'Fred..'
+    }
+  ];
+
+  function showModal(){
+    $scope.modal.show();
+  }
+
+  function closeModal(){
+    $scope.modal.hide();
+  }
+
+  function saveRockBand(){
+    $scope.rockband.photo = 'nirvana.png';
+    $scope.rockbands.push( $scope.rockband );
+    $scope.rockband = {};
+    $scope.modal.hide();
+  }
+
 });

@@ -1,0 +1,16 @@
+<ion-view title="My RockBands Yeah!!!">
+
+	<ion-nav-buttons side="right">
+		<button ng-click="showModal()" class="button icon ion-plus button-dark"></button>
+	</ion-nav-buttons>
+
+	<ion-content>
+		<ion-list>
+			<ion-item class="item-thumbnail-left" ng-repeat="band in rockbands">
+				<img ng-src="img/rockbands/{{ band.photo }}" alt="">
+				<h2>{{ band.name }}</h2>
+				<p> {{ band.voice }} </p>
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>

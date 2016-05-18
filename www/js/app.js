@@ -91,6 +91,16 @@ angular.module('starter', [
         controller: 'CakeCtrl'
       }
     }
+  })
+
+  .state('app.rockbands', {
+    url: '/rockbands',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/rockbands.html',
+        controller: 'RockBandsCtrl'
+      }
+    }
   });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/cake');

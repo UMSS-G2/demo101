@@ -1,0 +1,27 @@
+<ion-modal-view>
+	<ion-header-bar class="bar-dark">
+		<h2 class="title">Add new RockBand</h2>
+		<div class="buttons">
+			<button class="button button-calm icon ion-close" ng-click="closeModal()"></button>
+		</div>
+	</ion-header-bar>
+	<ion-content>
+		<form ng-submit="saveRockBand()">
+			<div class="list">
+				<label class="item item-input item-floating-label">
+					<span class="input-label">Name</span>
+					<input type="text" placeholder="Name" ng-model="rockband.name">
+				</label>
+				<label class="item item-input item-floating-label">
+					<span class="input-label">Voice</span>
+					<input type="text" placeholder="Voice" ng-model="rockband.voice">
+				</label>
+			</div>
+	
+			<div class="padding">
+				<button type="submit" class="button button-block button-dark">Save</button>
+			</div>
+
+		</form>
+	</ion-content>
+</ion-modal-view>
