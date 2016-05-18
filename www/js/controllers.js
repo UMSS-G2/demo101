@@ -201,7 +201,7 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('CakeCtrl', function($scope, $ionicPopup, $ionicLoading){
+.controller('CakeCtrl', function($scope, $ionicPopup, $ionicLoading, $ionicActionSheet){
 
   /*
   $ionicLoading.show();
@@ -213,6 +213,7 @@ angular.module('starter.controllers', [])
 
   $scope.showAlert = showAlert;
   $scope.saveIdea = saveIdea;
+  $scope.showActionSheet = showActionSheet;
 
 
   $scope.idea = {
@@ -257,6 +258,17 @@ angular.module('starter.controllers', [])
     console.log( "Money", $scope.idea.money );
     console.log( "Idea", $scope.idea.idea );
     console.log( "Idea", $scope.idea.types.filter( item => item.check ).map(item => item.name) );
+  }
+
+  function showActionSheet(){
+    $ionicActionSheet.show({
+      titleText: "Options",
+      cancelText: "Cancelar",
+      buttons: [
+        { text: '<i class="icon ion-plus"></i>  Share' },
+        { text: '<i class="icon ion-ios-telephone"></i> Call' }
+      ]
+    });
   }
 
 });
